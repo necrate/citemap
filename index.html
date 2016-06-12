@@ -1,0 +1,78 @@
+<!--
+index.html - The HTML page for CiteMap (contains the canvas and some menus)
+Alexander Gutierrez
+2016-06-01
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CiteMap Demo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<link rel="stylesheet" href="citemap.css" />
+<script type="text/javascript" src="https://www.cs.drexel.edu/~avg45/citemap/draw.js"></script>
+</head>
+
+<body onLoad="init()">
+
+<div id="menu_button" class="noselect">
+<span onclick="toggleMenu()">My Workspace <span id="menu_arrow">&#x25BC</span></span>
+</div>
+<div id="menu" class="noselect">
+<div id="menu_content">
+<div id="menu_workspace">
+<button class="btn" id="save" onclick="saveWork()">Save</button>
+<button class="btn" id="load" onclick="loadWork()">Load</button>
+</div>
+<div id="menu_links">
+Link Types <br />
+	<div id="link1" class="link_box">
+		<input class="link_checkbox" name="showlink1" id="showlink1"
+			type="checkbox" checked>
+		<label for="showlink1"><span></span></label>
+		<div class="link_color"></div>
+		<div class="link_key"><span>R</span></div>
+		<span class="link_name">Reference</span>
+	</div>
+	<div id="link2" class="link_box">
+		<input class="link_checkbox" name="showlink2" id="showlink2"
+			 type="checkbox" checked>
+		<label for="showlink2"><span></span></label>
+		<div class="link_color"></div>
+		<div class="link_key"><span>E</span></div>
+		<span class="link_name">Temporal</span>
+	</div>
+	<div id="link3" class="link_box">
+		<input class="link_checkbox" name="showlink3" id="showlink3"
+			 type="checkbox" checked>
+		<label for="showlink3"><span></span></label>
+		<div class="link_color"></div>
+		<div class="link_key"><span>W</span></div>
+		<span class="link_name">Related</span>
+	</div>
+<button class="btn" onclick="manageLinks()">Manage</button>
+</div><!-- menu_links -->
+<div class="tooltip">?
+	<span class="tooltiptext">
+		Create Node: Double click<br />
+		Create Link: Hold a Link Key above, then click node and drag<br />
+		Delete Node: Press the Delete key
+	</span>
+</div>
+</div><!-- menu_content -->
+</div>
+
+<div id="top-bar">
+<span style="padding:0;margin:2px;font-weight:bold">CiteMap Demo</span>
+<span>Zoom:</span> <pre class="numdisp" id="disp">100%</pre>  
+<span>| Nodes:</span> <pre class="numdisp" id="disp2">Not Loaded</pre>
+</div>
+<canvas id="canvas" width="1400" height="800">
+This browser does not support HTML5 canvas.
+</canvas>
+
+
+<div id="popup"></div>
+</body>
+
+</html>

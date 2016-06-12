@@ -1,0 +1,305 @@
+/* citemap.css
+ * Alexander Gutierrez
+ * 2016-06-01
+ */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: arial;
+}
+
+pre {
+	margin: 0;
+	display: inline-block;
+	height: 18px;
+}
+
+#canvas {
+	border: 1px solid #000000;
+	border-right: none;
+}
+
+#top-bar {
+	height: 21px;
+}
+
+#top-bar span {
+	vertical-align:middle;
+}
+
+#menu_button {
+	position: fixed;
+	top: 0px;
+	right: 10px;
+   height: 21px;
+	border: 1px solid #555555;
+	border-top: none;
+	border-bottom: none;
+	width: 200px;
+	background-color: #0e83cd;
+	color: #fff;
+	font-weight: 700;
+}
+
+#menu_button span {
+	cursor: pointer;
+	padding-left: 20px;
+	margin-right: 5px;
+	display: inline-block;
+	font-family: arial;
+}
+
+#menu_button span span {
+	padding: 0;
+	margin-left: 30px;
+	margin-right: 10px;
+}
+
+#menu {
+	position: fixed;
+	top: 21px;
+	right: 10px;
+	width: 200px;
+	height: 0px;
+   overflow: hidden;
+	border: 0px solid #555555;
+	border-radius: 0 0 15px 15px;
+   transition: 0.5s;
+	background-color: #0e83cd;
+}
+
+#menu_content {
+	margin: 10px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#menu_arrow {
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.arrow {
+	animation-name: rotateUp;
+}
+
+@keyframes rotateUp {
+	from { transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+	to   { transform: rotate(180deg); -webkit-transform: rotate(180deg); }
+}
+
+#menu_workspace {
+	margin: 10px;
+}
+
+#menu_links {
+	margin-top: 20px;
+	cursor: default;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.link_box {
+	border: 0px solid #000000;
+	border-radius: 10px;
+	width: 180px;
+	height: 40px;
+	display: flex;
+	background-color: #FFFFFF;
+	margin: 3px 0;
+}
+
+.link_color {
+	border: 1px solid #000000;
+	border-radius: 20px;
+	width: 20px;
+	height: 20px;
+	margin: auto 5px;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+input[type=checkbox] + label span {
+	display: inline-block;
+	width:19px;
+	height:19px;
+	background:url(check_radio_sheet.png) left top no-repeat;
+	margin: 10px 5px;
+	cursor:pointer;
+}
+
+input[type=checkbox]:checked + label span {
+	background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+
+.link_key {
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width: 20px;
+	height: 20px;
+	margin: auto 5px;
+	color: #000;
+	font-weight: 700;
+	text-align: center;
+}
+
+.link_key span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.link_name {
+	margin: auto 5px;
+	font-size: 12px;
+	color: #000;
+	font-weight: 700;
+}
+
+#menu_content button {
+	margin: 5px;
+	padding: 5px;
+	font-size: 14px;
+}
+
+#menu_links button {
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+#link1 div.link_color {
+	background-color: #444544;
+}
+
+#link2 div.link_color {
+	background-color: #FF9300;
+}
+
+#link3 div.link_color {
+	background-color: #00AEB0;
+}
+
+#popup {
+	position: absolute;
+	/*border: solid 1px #CCCCCC;*/
+	border: none;
+}
+
+#popup textarea {
+	resize: none;
+	border: dashed 1px #AAAAAA;
+	border-radius: 10px;
+}
+
+.numdisp {
+	font-family: "courier new", monospace;
+	font-size: 15px;
+}
+
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	border: 3px solid #fff;
+	color: #fff;
+	overflow: hidden;
+}
+
+.btn:after {
+	width: 100%;
+	height: 0;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	opacity: 0;
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.btn:hover,
+.btn:active {
+	color: #0e83cd;
+	background-color: #fff;
+}
+
+.btn:hover:after {
+	height: 260%;
+	opacity: 1;
+}
+
+.btn:active:after {
+	height: 400%;
+	opacity: 1;
+}
+
+.tooltip {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #FFF;
+	text-align: center;
+	border-radius: 20px;
+	cursor: default;
+	float: right;
+	margin-top: -10px;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 190px;
+	background-color: #555;
+	color: #fff;
+	text-align: left;
+	padding: 5px;
+	border-radius: 6px;
+	position: fixed;
+	z-index: 1;
+	top: 330px;
+	right: 10px;
+	opacity: 0;
+	transition: opacity 1s;
+	font-size:11px;
+	font-weight: 500;
+	text-transform: none;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: fixed;
+	top:320px;
+	right:28px;
+	border: 5px solid #555;
+	border-color: transparent transparent #555 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+.noselect {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
