@@ -1,6 +1,8 @@
 # citemap
 CiteMap is a multipurpose visual note organization application.
 
+While note-taking is a skill most people learn in school starting at an early age, sometimes there is a need to have a convenient and fast method of storing thoughts in a representation that we each find personally intuitive. CiteMap started out as a way to map paper references in a visual and spatial model in order to aid in organizing research, but later became a way to serve more generic use cases in storing notes. The interface focuses on simple, minimalistic design that allows the user to write down their thoughts quickly. The system is implemented as a web-based application that lets users interact with their graph-like stored representation in real time.
+
 Last update: 2016-06-01
 Alexander Gutierrez
 
